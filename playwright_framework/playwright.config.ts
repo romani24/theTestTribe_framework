@@ -34,6 +34,9 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
   },
+  // npx playwright test --headed --project=chromium
+  grep: [new RegExp("@smoke"), new RegExp("@sanity"), new RegExp("@regression")],
+  
 
   /* Configure projects for major browsers */
   projects: [
