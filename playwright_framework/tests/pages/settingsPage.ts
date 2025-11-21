@@ -1,17 +1,19 @@
 import { Locator, Page } from "@playwright/test";
+import BasePage from "./basePage";  
 
-export class SettingsPage {
+export class SettingsPage extends BasePage  {
 
     readonly page: Page;
     readonly logoutButton: Locator;
 
     constructor(page: Page) {
+        super(page);
         this.page = page;
-        this.logoutButton = this.page.locator("//button[normalize-space()='Logout']");
+        this.logoutButton = page.locator("//button[normalize-space()='Or click here to logout.']");
     }
 
     async clickLogoutButton() {
-        await this.logoutButton.click();
+        await this.clickElement(this.logoutButton);
     }
 
 }

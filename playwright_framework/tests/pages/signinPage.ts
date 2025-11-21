@@ -1,6 +1,8 @@
 import { Locator, Page } from "@playwright/test";
+import BasePage from "./basePage";  
 
-export class SignInPage {
+
+export class SignInPage extends BasePage {
     readonly page: Page;
     readonly emailIdTextBox: Locator;
     readonly passwordTextBox: Locator;
@@ -8,6 +10,7 @@ export class SignInPage {
     
 
     constructor(page: Page) {
+        super(page);
         this.page = page;
         this.emailIdTextBox = this.page.locator("//input[@placeholder='Email']");
         this.passwordTextBox = this.page.locator("//input[@placeholder='Password']");
@@ -15,14 +18,14 @@ export class SignInPage {
     }
 
     async enterEmailId(emailId: string) {
-        await this.emailIdTextBox.fill(emailId);
+        await this.fillFormField(this.emailIdTextBox, emailId);
     }
 
     async enterPassword(password: string) {
-        await this.passwordTextBox.fill(password);
+        await this.fillFormField(this.passwordTextBox, password);
     }
 
     async clickSignInButton() {
-        await this.signInButton.click();
+        await this.clickElement(this.signInButton);
     }
 }
