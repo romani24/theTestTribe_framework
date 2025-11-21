@@ -35,7 +35,8 @@ export default defineConfig({
     trace: 'on',
   },
   // npx playwright test --headed --project=chromium
-  grep: [new RegExp("@smoke"), new RegExp("@sanity"), new RegExp("@regression")],
+  // Match any of these tags by default (single RegExp). Remove or adjust if you don't want a default filter.
+  grep: /@smoke|@sanity|@regression/,
   
 
   /* Configure projects for major browsers */
