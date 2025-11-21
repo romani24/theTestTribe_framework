@@ -6,7 +6,7 @@ export class HomePage {
 
     constructor(page: Page) {
         this.page = page;
-        this.settingsButton = page.locator('a[href="#settings"]');
+        this.settingsButton = page.locator("a[href='#settings']");
     }
 
     async clickSettingsButton() {

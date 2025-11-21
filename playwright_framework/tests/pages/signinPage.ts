@@ -9,9 +9,9 @@ export class SignInPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.emailIdTextBox = this.page.locator('//input[placeholder="Email"]');
-        this.passwordTextBox = this.page.locator('//input[placeholder="Password"]');
-        this.signInButton = this.page.locator('//a[normalize-space()="Sign In"]');
+        this.emailIdTextBox = this.page.locator("//input[@placeholder='Email']");
+        this.passwordTextBox = this.page.locator("//input[@placeholder='Password']");
+        this.signInButton = this.page.locator("button[type='submit']");
     }
 
     async enterEmailId(emailId: string) {

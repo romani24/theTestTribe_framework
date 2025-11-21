@@ -6,7 +6,7 @@ export class LandingPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.signInButton = this.page.locator('//a[normalize-space()="Sign In"]');
+        this.signInButton = this.page.locator("//a[normalize-space()='Sign in']");
     }
 
     async clickSignInButton() {

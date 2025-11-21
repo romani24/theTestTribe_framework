@@ -7,7 +7,7 @@ export class SettingsPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.logoutButton = this.page.locator('//button[normalize-space()="Logout"]');
+        this.logoutButton = this.page.locator("//button[normalize-space()='Logout']");
     }
 
     async clickLogoutButton() {
