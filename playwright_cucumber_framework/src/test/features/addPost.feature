@@ -6,4 +6,4 @@ Feature: Conduit Login Functionality
         And I Click on New Post button
         And I fill up the require fields
         And I publish the article
-        Then I should see the Articcle posted
+        Then I should see the Article posted
