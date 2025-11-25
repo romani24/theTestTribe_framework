@@ -1,4 +1,4 @@
-import { After, Before, Status } from "@cucumber/cucumber";
+import { After, AfterAll, Before, Status } from "@cucumber/cucumber";
 import {Browser, Page, expect, chromium} from "@playwright/test";
 import { pageFixture } from "./pageFixture";
 
@@ -11,7 +11,11 @@ Before(async function() {
     pageFixture.page = page;
 })
 
-After(async function({pickle,result}) {
+After(async function() {
     await page.close();
+    await browser.close();
+})
+
+AfterAll(async function() {
     await browser.close();
 })
