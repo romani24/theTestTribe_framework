@@ -12,6 +12,11 @@ Before(async function() {
 })
 
 After(async function() {
+    // Screenshot on failure
+    if (this.result?.status === Status.FAILED) {
+        const image = await page.screenshot({ path: `./test-result/screenshots/failure-${Date.now()}.png`, fullPage: true });
+        this.attach(image, 'image/png');
+    }
     await page.close();
     await browser.close();
 })
